@@ -1,0 +1,709 @@
+/* ===============================
+   ROOT LAYOUT
+================================ */
+.spm-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+}
+
+/* ===============================
+   TOP BAR (GLOBAL HEADER)
+================================ */
+.spm-topbar {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.topbar-left h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.topbar-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.reg-no {
+  color: #111827;
+}
+
+/* ===============================
+   STATUS BADGES
+================================ */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===============================
+   BODY (SIDEBAR + CONTENT)
+================================ */
+.spm-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.spm-sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spm-sidebar button {
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.spm-sidebar button:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.spm-sidebar button.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.spm-sidebar button:disabled,
+.spm-sidebar .disabled {
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.spm-sidebar-divider {
+  height: 1px;
+  background-color: #2e3b4e;
+  margin: 16px 8px;
+}
+
+.pending-btn {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.pending-btn:hover {
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+.spm-content {
+  flex: 1;
+  padding: 24px 28px;
+  overflow-y: auto;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+.spm-section {
+  margin-bottom: 18px;
+}
+
+.spm-center {
+  text-align: center;
+}
+
+/* ===============================
+   WELCOME SCREEN
+================================ */
+.spm-welcome {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.spm-welcome h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.spm-welcome p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.spm-welcome ul {
+  padding-left: 18px;
+}
+
+.spm-welcome li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* ===============================
+   CARD (COMMON)
+================================ */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.card h3,
+.card h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.card strong {
+  color: #111827;
+}
+
+/* ===============================
+   SEARCH BOX
+================================ */
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.search-box button {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #1d4ed8;
+}
+
+.error {
+  margin-top: 8px;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+/* ===============================
+   FORMS
+================================ */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="submit"],
+button.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+button.approve {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+button.reject {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+/* ===============================
+   FEE SUMMARY
+================================ */
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.fee-row span {
+  color: #6b7280;
+}
+
+.fee-row .danger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ===============================
+   DIGITAL PASS BUTTON
+================================ */
+.digital-pass-btn {
+  padding: 10px 18px;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.digital-pass-btn:hover {
+  background: #000000;
+}
+
+/* ===============================
+   MESSAGES
+================================ */
+.success-text {
+  color: #16a34a;
+  font-size: 14px;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.locked-card {
+  padding: 20px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #555;
+}
+
+/* Home / Back Button */
+.home-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.home-btn:hover {
+  text-decoration: underline;
+}
+
+/* Align left section properly */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===============================
+   Student Details Layout
+=============================== */
+/* Title */
+.spm-student-title {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Main layout */
+.spm-student-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* LEFT SIDE – Student details card */
+.spm-student-info {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 8px;
+}
+
+/* Text inside card */
+.spm-student-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #000;
+}
+
+/* RIGHT SIDE – Image */
+.spm-student-photo-wrapper {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  margin-right: 60px; /* reduced for balance */
+}
+
+.spm-student-photo {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid #313235;
+}
+
+/* ================================
+   BUS PASS CREATION FORM (SCOPED)
+================================ */
+
+/* CARD */
+.buspass-form-card {
+  margin-top: 20px;
+}
+
+/* FORM */
+.buspass-form {
+  margin-top: 12px;
+}
+
+/* FIELD WRAPPER */
+.buspass-field {
+  margin-top: 16px;
+}
+
+/* LABEL */
+.buspass-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+/* CITY SELECT */
+.buspass-select {
+  width: 220px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.buspass-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* RADIO LIST */
+.buspass-radio-list {
+  margin-top: 8px;
+  max-width: 420px;
+}
+
+/* RADIO ITEM */
+.buspass-radio-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* RADIO INPUT */
+.buspass-radio-item input[type="radio"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+}
+
+/* RADIO TEXT */
+.buspass-radio-text {
+  font-size: 14px;
+  color: #111827;
+  line-height: 1.3;
+}
+
+/* HOVER */
+.buspass-radio-item:hover {
+  background-color: #f9fafb;
+  border-color: #2563eb;
+}
+
+/* SELECTED */
+.buspass-radio-item:has(input[type="radio"]:checked) {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+}
+
+/* ERROR / SUCCESS */
+.buspass-error {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #dc2626;
+}
+
+.buspass-success {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #16a34a;
+}
+
+/* SUBMIT BUTTON */
+.buspass-submit-btn {
+  margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buspass-submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ===== PAYMENT HISTORY CARD ===== */
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* TABLE HEADER */
+.payment-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  background-color: #f3f4f6;
+  color: #111827;
+  font-weight: 600;
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* TABLE BODY */
+.payment-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+/* ROW HOVER */
+.payment-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* AMOUNT COLUMN */
+.payment-table tbody td:nth-child(2) {
+  font-weight: 600;
+  color: #065f46; /* subtle green for money */
+}
+
+/* DATE COLUMN */
+.payment-table tbody td:nth-child(3) {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* EMPTY MESSAGE */
+.card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== ADD PAYMENT CARD ===== */
+.card h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* FORM LAYOUT */
+.card form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* INPUT FIELDS */
+.card form input[type="number"],
+.card form input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* INPUT FOCUS */
+.card form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* SUBMIT BUTTON */
+.card form button {
+  padding: 10px 18px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* BUTTON HOVER */
+.card form button:hover {
+  background-color: #1d4ed8;
+}
+
+/* DISABLED BUTTON */
+.card form button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* SUCCESS MESSAGE */
+.success-text {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #16a34a;
+}
+
+.spm-content {
+  padding: 20px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.spm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spm-table th,
+.spm-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.spm-table th {
+  background-color: #f4f6f8;
+}
+
+.paid {
+  color: green;
+  font-weight: 600;
+}
+
+.pending {
+  color: orange;
+  font-weight: 600;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}

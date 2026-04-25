@@ -1,0 +1,293 @@
+/* ======================
+GLOBAL PAGE
+====================== */
+
+html, body{
+height:100%;
+margin:0;
+overflow-y:auto;
+overflow-x:hidden;
+font-family:'Inter','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+background:#f4f6fb;
+color:#1f2937;
+}
+
+.finance-page{
+min-height:100vh;
+}
+
+
+/* ======================
+TOPBAR
+====================== */
+
+.page-header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:70px;
+display:flex;
+align-items:center;
+gap:20px;
+padding:0 30px;
+background:white;
+border-bottom:1px solid #e5e7eb;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+z-index:1000;
+}
+
+.home-link{
+text-decoration:none;
+color:#0a0a0b;
+font-size:14px;
+font-weight:500;
+transition:0.2s;
+}
+
+.home-link:hover{
+color:#0f0f0f;
+text-decoration: underline;
+}
+
+.header-text h2{
+margin:0;
+font-size:22px;
+font-weight:600;
+color:#111827;
+}
+
+.header-text p{
+margin:3px 0 0 0;
+font-size:13px;
+color:#6b7280;
+}
+
+
+/* ======================
+LAYOUT
+====================== */
+
+.page-layout{
+display:flex;
+margin-top:70px;
+min-height:calc(100vh - 70px);
+}
+
+
+/* ======================
+SIDEBAR
+====================== */
+
+.sidebar{
+position:fixed;
+top:70px;
+left:0;
+width:240px;
+height:calc(100vh - 70px);
+background:linear-gradient(180deg,#0f172a,#1e293b);
+padding:25px 15px;
+overflow:hidden;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.sidebar li{
+padding:12px 18px;
+margin-bottom:10px;
+color:#cbd5e1;
+font-size:15px;
+border-radius:8px;
+cursor:pointer;
+transition:all 0.25s ease;
+}
+
+.sidebar li:hover{
+background:#334155;
+color:white;
+transform:translateX(3px);
+}
+
+.sidebar .active{
+background:#2563eb;
+color:white;
+box-shadow:0 4px 10px rgba(37,99,235,0.4);
+}
+
+
+/* ======================
+CONTENT
+====================== */
+
+.content{
+margin-left:240px;
+padding:40px;
+width:100%;
+box-sizing:border-box;
+}
+
+
+/* ======================
+WELCOME CARD
+====================== */
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+margin-bottom:30px;
+box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.card h3{
+margin-top:0;
+font-weight:600;
+color:#111827;
+}
+
+.card p{
+color:#6b7280;
+line-height:1.5;
+}
+
+
+/* ======================
+STATS CARDS
+====================== */
+
+.stats{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.stat-box{
+flex:1;
+min-width:230px;
+background:white;
+padding:28px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+transition:all 0.25s ease;
+}
+
+.stat-box:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.stat-box h4{
+margin-bottom:8px;
+font-size:14px;
+font-weight:500;
+color:#6b7280;
+}
+
+.stat-box p{
+font-size:24px;
+font-weight:600;
+margin:0;
+color:#111827;
+}
+
+
+/* ======================
+TABLE STYLE
+====================== */
+
+.finance-table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:12px;
+overflow:hidden;
+margin-top:15px;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+
+.finance-table th{
+background:#f1f5f9;
+text-align:left;
+padding:15px;
+font-size:14px;
+font-weight:600;
+color:#374151;
+border-bottom:1px solid #e5e7eb;
+}
+
+.finance-table td{
+padding:15px;
+border-bottom:1px solid #f1f5f9;
+font-size:14px;
+color:#374151;
+}
+
+.finance-table tr:last-child td{
+border-bottom:none;
+}
+
+.finance-table tr:hover{
+background:#f9fafb;
+}
+
+
+/* ======================
+SECTION TITLES
+====================== */
+
+.section-title{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+margin-bottom:15px;
+font-weight:600;
+}
+
+.title-icon{
+font-size:26px;
+color:#2563eb;
+}
+
+
+/* ======================
+ICONS
+====================== */
+
+.card-icon{
+font-size:26px;
+margin-bottom:6px;
+}
+
+.revenue{color:#2563eb;}
+.expense{color:#f59e0b;}
+.balance{color:#10b981;}
+.profit{color:#16a34a;}
+.loss{color:#dc2626;}
+
+
+/* ======================
+RESPONSIVE
+====================== */
+
+@media (max-width:900px){
+
+.sidebar{
+width:200px;
+}
+
+.content{
+margin-left:200px;
+}
+
+.stats{
+flex-direction:column;
+}
+
+}

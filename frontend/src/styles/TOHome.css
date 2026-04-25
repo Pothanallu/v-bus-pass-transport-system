@@ -1,0 +1,54 @@
+/* ===============================
+   PAGE OFFSET FOR FIXED HEADER
+================================ */
+.page-content {
+  padding-top: 100px; /* height of fixed header */
+}
+
+/* ===============================
+   PAGE BACKGROUND
+================================ */
+.home-container {
+  min-height: 100vh;
+  background-color: #eef2f6;
+  padding: 40px 0;
+}
+
+/* ===============================
+   CENTERED DASHBOARD WRAPPER
+================================ */
+.dashboard-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===============================
+   DASHBOARD HEADER
+================================ */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.dashboard-header p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===============================
+   MODULE GRID
+================================ */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}

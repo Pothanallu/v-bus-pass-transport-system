@@ -1,0 +1,552 @@
+/* =========================================================
+   BUS MANAGEMENT – MAIN LAYOUT
+========================================================= */
+
+.bm-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f8fafc;
+}
+
+/* BELOW TOPBAR */
+.bm-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SIDEBAR (LEFT)
+   - Reusing StudentPassSidebar (.spm-sidebar)
+========================================================= */
+
+.spm-sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spm-sidebar button {
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.spm-sidebar button:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.spm-sidebar button.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.spm-sidebar button:disabled,
+.spm-sidebar .disabled {
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   MAIN CONTENT (RIGHT)
+========================================================= */
+
+.bm-content {
+  flex: 1;
+  padding: 24px 28px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+/* ================================
+   BUS SEARCH (SEARCHABLE DROPDOWN)
+================================ */
+
+/* WRAPPER */
+.bus-search-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 10; /* 🔥 ensures dropdown stays above */
+}
+
+/* INPUT + BUTTON ROW */
+.bus-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* INPUT */
+.bus-search-row input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* INPUT FOCUS */
+.bus-search-row input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* SEARCH BUTTON */
+.bus-search-row button {
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bus-search-row button:hover {
+  background-color: #1d4ed8;
+}
+
+/* DROPDOWN LIST */
+.bus-search-dropdown {
+  position: absolute;
+  top: 100%; /* 🔥 align directly below input */
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 9999; /* 🔥 critical fix */
+  list-style: none;
+  padding: 0;
+}
+
+/* DROPDOWN ITEM */
+.bus-search-dropdown li {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #111827;
+}
+
+/* DROPDOWN HOVER */
+.bus-search-dropdown li:hover {
+  background-color: #f3f4f6;
+}
+
+/* ERROR MESSAGE */
+.bus-search-wrapper .error-text {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #dc2626;
+}
+
+/* =========================================================
+   CARD (WELCOME / DETAILS / INSPECTION)
+========================================================= */
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.warning-card {
+  border-left: 4px solid #f59e0b;
+  background: #fff7ed;
+}
+
+/* =========================================================
+   TABLE (IF USED LATER)
+========================================================= */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin-top: 20px;
+}
+
+.data-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* =========================================================
+   TOPBAR STATUS BADGES
+========================================================= */
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+/* BUS OPERATIONAL STATUS */
+.status-badge.active {
+  background: #e6f7ec;
+  color: #1e7e34;
+}
+
+.status-badge.under-maintenance {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.not-in-service {
+  background: #fdecea;
+  color: #a71d2a;
+}
+
+/* FITNESS STATUS */
+.status-badge.fitness-valid {
+  background: #e6f7ec;
+  color: #1e7e34;
+}
+
+.status-badge.fitness-expired {
+  background: #fdecea;
+  color: #a71d2a;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-view {
+  padding: 6px 12px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-view:hover {
+  background-color: #1d4ed8;
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+/* =========================
+   STATS GRID (SIDE BY SIDE)
+========================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes in one row */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* STAT BOX */
+.stat-box {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-box h4 {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.stat-box p {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* COLORS */
+.stat-box.success {
+  background: #e6f7ec;
+  color: #1e7e34;
+}
+
+.stat-box.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.stat-box.danger {
+  background: #fdecea;
+  color: #a71d2a;
+}
+
+/* =========================
+   MANAGE BUS FORM
+========================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ⬅️ SIDE BY SIDE */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Inputs & Select */
+.form-grid input,
+.form-grid select {
+  width: 90%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background: #ffffff;
+}
+
+/* Focus */
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* Validation message below field */
+.form-error {
+  grid-column: span 1;
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: -8px;
+}
+
+/* Button */
+.btn-primary {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* ⬅️ STACK ON MOBILE */
+  }
+}
+
+/* =========================
+   BUS DETAILS – SCOPED ONLY
+========================= */
+
+.bus-details-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.bus-details-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+/* Row layout */
+.bus-details-card p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Labels */
+.bus-details-card p b {
+  font-weight: 600;
+  color: #111827;
+  min-width: 130px;
+}
+
+/* Status base */
+.bus-details-card .bus-status {
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status colors */
+.bus-details-card .status-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.bus-details-card .status-under-maintenance {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bus-details-card .status-not-in-service {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===== Inline Edit Row ===== */
+.edit-row {
+  background-color: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== Inline Edit Container ===== */
+.inline-edit {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+/* ===== Field Wrapper ===== */
+.inline-edit .field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Field Labels ===== */
+.inline-edit .field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* ===== Input Fields ===== */
+.inline-edit .field input {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.inline-edit .field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+/* ===== Action Buttons ===== */
+.inline-edit .actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Save Button */
+.inline-edit .actions button:first-child {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inline-edit .actions button:first-child:hover {
+  background-color: #1d4ed8;
+}
+
+/* Cancel Button */
+.inline-edit .actions button:last-child {
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inline-edit .actions button:last-child:hover {
+  background-color: #d1d5db;
+}
+
+/* ===== Dropdown Field (Trips Inline Edit) ===== */
+.inline-edit .field select {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Focus state */
+.inline-edit .field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+/* Hover state */
+.inline-edit .field select:hover {
+  border-color: #9ca3af;
+}
+
+/* Disabled dropdown (if used later) */
+.inline-edit .field select:disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
